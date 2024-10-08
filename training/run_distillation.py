@@ -1558,6 +1558,7 @@ def main():
     if checkpoint is not None:
         accelerator.load_state(checkpoint)
         # Find num steps and epoch from saved state string pattern
+        print("THIS IS MY CHECKPOINT",checkpoint)
         pattern = r"^/kaggle/working/distil-whisper/training/distil-whisper-small-ur/checkpoint-(\d+)-epoch-(\d+)$"
         match = re.search(pattern, checkpoint)
         cur_step = int(match.group(1))
