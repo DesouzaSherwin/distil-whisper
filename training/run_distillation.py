@@ -1556,6 +1556,7 @@ def main():
         checkpoint = last_checkpoint
 
     if checkpoint is not None:
+        print("CHECKPOINTTTTT",checkpoint)
         accelerator.load_state(checkpoint)
         # Find num steps and epoch from saved state string pattern
         pattern = r"checkpoint-(\d+)-epoch-(\d+)"
