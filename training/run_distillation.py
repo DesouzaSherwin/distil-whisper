@@ -1605,8 +1605,6 @@ def main():
             train_dataloader = accelerator.skip_first_batches(train_dataloader, resume_step)
             resume_step = None
 
-        if batch is None:
-            continue
         for batch in train_dataloader:
             with accelerator.accumulate(student_model):
                 loss, train_metric = train_step(batch, temperature=training_args.temperature)
